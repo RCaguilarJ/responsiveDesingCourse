@@ -1,0 +1,77 @@
+
+Tips para estructurar tu arquitectura web
+
+Recuerda:
+
+    Debes tener tu archivo index.html y .css dentro en carpetas organizadas.
+    index es el nombre de archivo que primero lee el navegador.
+    Para abreviar la escritura de código HTML puedes usar Emmet. En este caso para escribir la estructura base usamos: header^main>section*4^footer
+
+
+¿Qué son los assets?
+
+Son todos los recursos estáticos como imágenes, audio, documentos y demás que utilizaremos en nuestro proyecto.
+¿Cómo descargar los assets?
+
+Lo primero es entrar al prototipo del proyecto en Figma.
+
+    Para descargar cualquier recurso, hacemos clic sobre él para ver sus detalles en el panel derecho.
+    Vamos a la pestaña “Exportar”.
+    Elegimos el formato en que queremos descargar el recurso, en este caso una imagen.
+    En la pestaña de “Preview” vemos el resultado final del recurso. La imagen a descargar tiene un fondo transparente.
+    Damos clic en “Exportar”.
+
+
+¿Qué es BEM?
+
+BEM (Block, Element, Modifier o Bloque, Elemento, Modificador) es una metodología ágil de desarrollo basada en componentes. Divide toda la interfaz en bloques que se pueden reutilizar y escalar.
+
+suponiendo que nuestra página a la vista se tiene como clase "card", para asignarle un estilo a cada una de ellas es de la siguiente manera 
+
+*vista de la página*
+una imágen, text a medias de la página, botón de "atrás" y botón de "siguiente"
+
+*asignar estilos*
+.card
+.card_image
+.card_description
+.card_button-success, .card_button-back
+
+
+
+
+Cómo dar estilos al fondo
+
+Vamos al prototipo del proyecto en Figma. Si hacemos clic sobre el fondo observamos los colores que tiene. En la sección de código css encontramos un linear-gradient con la información que necesitamos. Lo copiamos y lo agregamos dentro de los estilos del header.
+
+background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+
+Cómo dar estilos al título
+
+    Revisamos los estilos del título principal en el prototipo, no con la intención de copiarlos, sino solo tomar detalles como el tamaño y grosor del texto.
+
+    Llamamos la etiqueta h1 usando el nombre de la clase contenedora .header–title-container. Y sí, podríamos llamar solo la etiqueta h1, después de todo sólo debe existir una en todo el documento, ¿verdad? Es así, sin embargo, ser específicos es parte de las buenas prácticas. Cuando avances más usarás librerías como Bootstrap que pueden traer consigo estilos para ciertas etiquetas. Siendo específicos los estilos que apliquemos no se verán afectados por estas. Ya sabes, siempre trata de ser específico.
+    Ajustamos el tamaño de fuente con font-size: 2.4rem (24px) y el ancho con font-weight: bold.
+    Ajustamos la dimensión entre líneas o interlineado con line-height: 2.6rem.
+    Cambiamos su color con la variable correspondiente, ***color: var(–just-white)***.
+
+
+Cómo dar estilos al párrafo
+
+    Llamamos nuestra etiqueta de párrafo desde la clase contenedora .header–title-container.
+Añadimos un margen superior para separarla un poco del título con margin-top: 25px.
+Ajustamos el tamaño con font-size: 1.4rem y su grosor con font-weight: 500.
+Le damos un interlineado con line-height 1.8rem.
+Cambiamos el color de fuente con la variable correspondiente, ***color: var(–soft-orange)***
+
+
+
+.header--title-container p {
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--soft-orange)
+}
+
+
